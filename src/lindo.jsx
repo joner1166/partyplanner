@@ -32,36 +32,36 @@ export const MENU_DATA = {
   chicken: {
     label: 'Chicken', icon: '🍗',
     items: [
-      { name: 'Pollo Sarandeado',        desc: 'Grilled chicken breast basted with Sarandeado sauce, a selection of dried chiles, secret spices and blended with a touch of mayonnaise.',                                          emoji: '🔥', img: '/images/chicken/pollosarandeado.jpg' },
-      { name: 'Pollo con Rajas y Crema', desc: 'Grilled chicken breast, sautéed in a little olive oil, onions and fresh roasted pasilla strips in a cream sauce.',                                                                   emoji: '🍗', img: '/images/chicken/pollorajas.jpg'      },
-      { name: 'Chicken Fajitas',         desc: 'Chicken breast stir-fried with green, yellow and red peppers, onions, cilantro and tomato.',                                                                                          emoji: '🌮', img: '/images/chicken/chickenfajitas.jpg'   },
-      { name: 'Pollo al Mojo de Ajo',    desc: 'Chicken breast cooked in olive oil, wine, fresh garlic and slices of Guajillo peppers.',                                                                                              emoji: '🧄', img: '/images/chicken/pollomojo.jpg'        },
+      { name: 'Pollo Sarandeado',        desc: 'Grilled chicken breast basted with Sarandeado sauce, a selection of dried chiles, secret spices and blended with a touch of mayonnaise.',                                          emoji: '🔥', img: '/images/chicken/pollosarandeado.webp' },
+      { name: 'Pollo con Rajas y Crema', desc: 'Grilled chicken breast, sautéed in a little olive oil, onions and fresh roasted pasilla strips in a cream sauce.',                                                                   emoji: '🍗', img: '/images/chicken/pollorajas.webp'      },
+      { name: 'Chicken Fajitas',         desc: 'Chicken breast stir-fried with green, yellow and red peppers, onions, cilantro and tomato.',                                                                                          emoji: '🌮', img: '/images/chicken/chickenfajitas.webp'   },
+      { name: 'Pollo al Mojo de Ajo',    desc: 'Chicken breast cooked in olive oil, wine, fresh garlic and slices of Guajillo peppers.',                                                                                              emoji: '🧄', img: '/images/chicken/pollomojo.webp'        },
     ],
   },
   steak: {
     label: 'Steak', icon: '🥩',
     items: [
-      { name: 'Steak Fajitas',    desc: 'Marinated beef stir-fried with green, yellow and red peppers, onions, cilantro and spices.',                                                              emoji: '🥩', img: '/images/steak/stk fajitas.jpg'       },
-      { name: 'Chile Colorado',   desc: 'Steak in small chunks, sautéed in red sauce, made with dried chile de arbol, Guajillo, fresh tomato and spices.',                                        emoji: '🌶️', img: '/images/steak/chilecolorado.jpg' },
-      { name: 'Carne Asada Tacos',desc: 'Broiled and diced steak cooked with pico de gallo and served with avocado sauce.',                                                                        emoji: '🌮', img: '/images/steak/tacosasada.jpg'    },
+      { name: 'Steak Fajitas',    desc: 'Marinated beef stir-fried with green, yellow and red peppers, onions, cilantro and spices.',                                                              emoji: '🥩', img: '/images/steak/stk fajitas.webp'       },
+      { name: 'Chile Colorado',   desc: 'Steak in small chunks, sautéed in red sauce, made with dried chile de arbol, Guajillo, fresh tomato and spices.',                                        emoji: '🌶️', img: '/images/steak/chilecolorado.webp' },
+      { name: 'Carne Asada Tacos',desc: 'Broiled and diced steak cooked with pico de gallo and served with avocado sauce.',                                                                        emoji: '🌮', img: '/images/steak/tacosasada.webp'    },
     ],
   },
   pork: {
     label: 'Pork', icon: '🐷',
     items: [
-      { name: 'Carnitas',               desc: 'Lean pork, marinated with fresh oranges and spices. Slowly cooked in its own juices until tender. Served with chiles toreados and avocado salsa.',              emoji: '🐷', img: '/images/pork/carnitas.jpg'             },
-      { name: 'Carnitas a la Mexicana', desc: 'Lean pork sauteed with onions, tomatoes, jalapeños and cilantro.',                                                                                                    emoji: '🍅', img: '/images/pork/carnitasmexicana.jpg'    },
-      { name: 'Chile Verde',            desc: 'Lean pork simmered in our delicious green salsa made with tomatillos, green peppers, onions, cilantro, fresh garlic and different spices.',                           emoji: '🫕', img: '/images/pork/chileverde.jpg'           },
-      { name: 'Cochinito Habanero',     desc: 'Lean pork sauteed with onions, tomatoes, habanero, jalapeños and cilantro with a touch of Blue Agave tequila for a special taste.',                                  emoji: '🌶️', img: '/images/pork/cochinitahabanero.jpg'    },
+      { name: 'Carnitas',               desc: 'Lean pork, marinated with fresh oranges and spices. Slowly cooked in its own juices until tender. Served with chiles toreados and avocado salsa.',              emoji: '🐷', img: '/images/pork/carnitas.webp'             },
+      { name: 'Carnitas a la Mexicana', desc: 'Lean pork sauteed with onions, tomatoes, jalapeños and cilantro.',                                                                                                    emoji: '🍅', img: '/images/pork/carnitasmexicana.webp'    },
+      { name: 'Chile Verde',            desc: 'Lean pork simmered in our delicious green salsa made with tomatillos, green peppers, onions, cilantro, fresh garlic and different spices.',                           emoji: '🫕', img: '/images/pork/chileverde.webp'           },
+      { name: 'Cochinito Habanero',     desc: 'Lean pork sauteed with onions, tomatoes, habanero, jalapeños and cilantro with a touch of Blue Agave tequila for a special taste.',                                  emoji: '🌶️', img: '/images/pork/cochinitahabanero.webp'    },
     ],
   },
   shrimp: {
     label: 'Shrimp', icon: '🦐',
     items: [
-      { name: 'Camarones a la Diabla',      desc: 'Large fresh Mexican Gulf shrimp sautéed in a red sauce made with a combination of dried chiles, tomato and bit of ketchup.',                                                              emoji: '🔥', img: '/images/shrimp/camaronesdiabla.jpg'      },
-      { name: 'Camarones Sarandeados',      desc: 'Large fresh Mexican Gulf shrimp basted in sarandeado sauce with a selection of dried chiles, and secret spices blended with a touch of mayonnaise.',                                   emoji: '🍤', img: '/images/shrimp/camaronessarandeados.jpg' },
-      { name: 'Camarones con Rajas y Crema',desc: 'Large fresh Mexican Gulf shrimp sautéed in a little olive oil, and fresh roasted pasilla strips in a cream sauce.',                                                                    emoji: '🦐', img: '/images/shrimp/camrajas.jpg'      },
-      { name: 'Shrimp Fajitas',             desc: 'Large fresh Mexican Gulf shrimp stir-fried with green, yellow and red peppers, onions, cilantro, tomatoes and spices.',                                                                emoji: '🌮', img: '/images/shrimp/shrimpfajitas.jpg' },
+      { name: 'Camarones a la Diabla',      desc: 'Large fresh Mexican Gulf shrimp sautéed in a red sauce made with a combination of dried chiles, tomato and bit of ketchup.',                                                              emoji: '🔥', img: '/images/shrimp/camaronesdiabla.webp'      },
+      { name: 'Camarones Sarandeados',      desc: 'Large fresh Mexican Gulf shrimp basted in sarandeado sauce with a selection of dried chiles, and secret spices blended with a touch of mayonnaise.',                                   emoji: '🍤', img: '/images/shrimp/camaronessarandeados.webp' },
+      { name: 'Camarones con Rajas y Crema',desc: 'Large fresh Mexican Gulf shrimp sautéed in a little olive oil, and fresh roasted pasilla strips in a cream sauce.',                                                                    emoji: '🦐', img: '/images/shrimp/camrajas.webp'      },
+      { name: 'Shrimp Fajitas',             desc: 'Large fresh Mexican Gulf shrimp stir-fried with green, yellow and red peppers, onions, cilantro, tomatoes and spices.',                                                                emoji: '🌮', img: '/images/shrimp/shrimpfajitas.webp' },
     ],
   },
 }
@@ -81,6 +81,7 @@ function DishCard({ dish, selected, onToggle }) {
             src={dish.img}
             alt={dish.name}
             className="dish-img"
+            loading="lazy"
             onError={() => setImgFailed(true)}
           />
         ) : (

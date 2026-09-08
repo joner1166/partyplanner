@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react'
 
 const SLIDES = [
-  '/slide/1000087142.jpg',
-  '/slide/1000087143.jpg',
-  '/slide/1000087146.jpg',
-  '/slide/1000087721.jpg',
-  '/slide/1000087722.jpg',
-  '/slide/1000087723.jpg',
-  '/slide/1000087724.jpg',
-  '/slide/lindo%20fondo.jpg',
-  '/slide/lindo_DI_005.jpg',
+  '/slide/1000087142.webp',
+  '/slide/1000087143.webp',
+  '/slide/1000087146.webp',
+  '/slide/1000087721.webp',
+  '/slide/1000087722.webp',
+  '/slide/1000087723.webp',
+  '/slide/1000087724.webp',
+  '/slide/lindo%20fondo.webp',
+  '/slide/lindo_DI_005.webp',
 ]
 
 function ImageCarousel() {
   const [index, setIndex] = useState(0)
+  const nextIndex = (index + 1) % SLIDES.length
 
   useEffect(() => {
     const timer = setInterval(() => setIndex(i => (i + 1) % SLIDES.length), 3000)
@@ -22,15 +23,18 @@ function ImageCarousel() {
 
   return (
     <div className="splash-carousel">
-      {SLIDES.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt={`restaurant photo ${i + 1}`}
-          className="splash-carousel-img"
-          style={{ opacity: i === index ? 1 : 0 }}
-        />
-      ))}
+      {SLIDES.map((src, i) => {
+        if (i !== index && i !== nextIndex) return null
+        return (
+          <img
+            key={src}
+            src={src}
+            alt={`restaurant photo ${i + 1}`}
+            className="splash-carousel-img"
+            style={{ opacity: i === index ? 1 : 0 }}
+          />
+        )
+      })}
     </div>
   )
 }
