@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/logolindo.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Original Lindo Michoacán – Event Booking</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Netlify Forms detection — DO NOT REMOVE.
+      Netlify scans this file at build time to register the form endpoint.
+      After deploying, go to: Site Settings → Forms → Notifications
+      and add desertinn@lindomichoacan.com as the email recipient.
+    -->
+    <form name="event-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="event-booking" />
+      <input name="bot-field" />
+      <input name="customer-name" />
+      <input name="phone" />
+      <input name="email" />
+      <input name="service-type" />
+      <input name="guests" />
+      <input name="event-date" />
+      <input name="event-time" />
+      <input name="menu-selections" />
+      <input name="estimated-quote" />
+      <input name="comments" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

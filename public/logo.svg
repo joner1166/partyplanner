@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#D4A017" stroke="#8B2000" stroke-width="3"/>
+  <!-- Sun rays -->
+  <g stroke="#8B2000" stroke-width="3" stroke-linecap="round">
+    <line x1="50" y1="4"  x2="50" y2="14"/>
+    <line x1="50" y1="86" x2="50" y2="96"/>
+    <line x1="4"  y1="50" x2="14" y2="50"/>
+    <line x1="86" y1="50" x2="96" y2="50"/>
+    <line x1="16" y1="16" x2="23" y2="23"/>
+    <line x1="77" y1="77" x2="84" y2="84"/>
+    <line x1="84" y1="16" x2="77" y2="23"/>
+    <line x1="23" y1="77" x2="16" y2="84"/>
+  </g>
+  <!-- Inner circle face -->
+  <circle cx="50" cy="50" r="32" fill="#F5D060" stroke="#8B2000" stroke-width="2"/>
+  <!-- Eyes -->
+  <ellipse cx="40" cy="44" rx="4" ry="5" fill="#8B2000"/>
+  <ellipse cx="60" cy="44" rx="4" ry="5" fill="#8B2000"/>
+  <!-- Nose -->
+  <ellipse cx="50" cy="52" rx="2.5" ry="2" fill="#8B2000"/>
+  <!-- Smile -->
+  <path d="M38 60 Q50 70 62 60" fill="none" stroke="#8B2000" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Eyebrows -->
+  <path d="M35 38 Q40 34 45 38" fill="none" stroke="#8B2000" stroke-width="2" stroke-linecap="round"/>
+  <path d="M55 38 Q60 34 65 38" fill="none" stroke="#8B2000" stroke-width="2" stroke-linecap="round"/>
+</svg>
