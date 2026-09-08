@@ -5,12 +5,10 @@ import './splash.css'
 const HERO = [
   { src: '/slide/1000087723.webp',   alt: 'Salón de Lindo Michoacán preparado para un evento' },
   { src: '/slide/lindo_DI_005.webp', alt: 'Comedor de Lindo Michoacán' },
-  { src: '/slide/1000087142.webp',   alt: 'Estación de buffet de Lindo Michoacán lista para un evento' },
-  { src: '/slide/1000087143.webp',   alt: 'Mesa de botanas y salsas del servicio de catering' },
   { src: '/slide/1000087146.webp',   alt: 'Buffet de catering con el logo de Lindo Michoacán' },
   { src: '/slide/1000087721.webp',   alt: 'Catering de Lindo Michoacán en un evento corporativo' },
   { src: '/slide/1000087722.webp',   alt: 'Catering de Lindo Michoacán con decoración de papel picado' },
-  { src: '/slide/1000087724.webp',   alt: 'Catering de Lindo Michoacán al aire libre, con mesa de postres' },
+  { src: '/slide/banquets-1.webp',   alt: 'Mesa de banquete de Lindo Michoacán servida al aire libre' },
   { src: '/slide/lindo fondo.webp',  alt: 'Fachada del restaurante Lindo Michoacán' },
 ]
 
