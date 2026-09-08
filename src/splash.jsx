@@ -3,13 +3,13 @@ import './splash.css'
 
 // Salón — rota entre las fotos del restaurante y eventos de catering
 const HERO = [
-  { src: '/slide/1000087723.webp',   alt: 'Salón de Lindo Michoacán preparado para un evento' },
-  { src: '/slide/lindo_DI_005.webp', alt: 'Comedor de Lindo Michoacán' },
-  { src: '/slide/1000087146.webp',   alt: 'Buffet de catering con el logo de Lindo Michoacán' },
-  { src: '/slide/1000087721.webp',   alt: 'Catering de Lindo Michoacán en un evento corporativo' },
-  { src: '/slide/1000087722.webp',   alt: 'Catering de Lindo Michoacán con decoración de papel picado' },
-  { src: '/slide/banquets-1.webp',   alt: 'Mesa de banquete de Lindo Michoacán servida al aire libre' },
-  { src: '/slide/lindo fondo.webp',  alt: 'Fachada del restaurante Lindo Michoacán' },
+  { src: '/slide/1000087723.webp',   alt: 'Salón de Lindo Michoacán preparado para un evento',         caption: 'Large rooms for your event' },
+  { src: '/slide/lindo_DI_005.webp', alt: 'Comedor de Lindo Michoacán',                                 caption: 'Comfortable dining, any occasion' },
+  { src: '/slide/1000087146.webp',   alt: 'Buffet de catering con el logo de Lindo Michoacán',           caption: 'Professional staff, every event' },
+  { src: '/slide/1000087721.webp',   alt: 'Catering de Lindo Michoacán en un evento corporativo',        caption: 'Corporate & private catering' },
+  { src: '/slide/1000087722.webp',   alt: 'Catering de Lindo Michoacán con decoración de papel picado',  caption: 'Full-service catering setup' },
+  { src: '/slide/banquets-1.webp',   alt: 'Mesa de banquete de Lindo Michoacán servida al aire libre',   caption: 'Full setup & delivery, anywhere' },
+  { src: '/slide/lindo fondo.webp',  alt: 'Fachada del restaurante Lindo Michoacán',                     caption: 'The Original Lindo Michoacán' },
 ]
 
 // Platillos — dos mosaicos que van cambiando de plato
@@ -111,8 +111,7 @@ export function SplashPage({ onStart }) {
           <div className="sp-cell sp-cell-hero">
             <PhotoStack items={HERO} index={heroIndex} kenBurns />
             <div className="sp-hero-caption">
-              <div className="sp-hero-title">The dining room, dressed for your party</div>
-              <div className="sp-hero-sub">Tables for 20 to 100</div>
+              <div className="sp-hero-title">{HERO[heroIndex].caption}</div>
             </div>
           </div>
 
