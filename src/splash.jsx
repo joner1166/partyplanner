@@ -87,7 +87,7 @@ export function SplashPage({ onStart }) {
             <h1 className="sp-title">Your celebration,<br />cooked seriously.</h1>
             <p className="sp-lede">
               Reserve our dining room, full-service catering, or delivery — for 20 to 100 guests.
-              Choose your date, your dishes, and see the estimate before you send a thing.
+              Choose your date, your dishes, and get an estimated quote.
             </p>
           </div>
 
@@ -103,8 +103,6 @@ export function SplashPage({ onStart }) {
             <span>Since 1990</span>
             <span className="sp-dot" />
             <span>Las Vegas, Nevada</span>
-            <span className="sp-dot" />
-            <span>20–100 guests</span>
           </div>
         </div>
       </div>
