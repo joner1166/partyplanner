@@ -187,6 +187,24 @@
   background: linear-gradient(to top, rgba(12, 20, 34, 0.85), rgba(12, 20, 34, 0));
 }
 
+/* ── Teléfono: texto ~10% más chico, el mosaico de fotos se queda con
+   el espacio vertical que el panel deja libre en vez de repartirse
+   50/50 con él. ── */
+@media (max-width: 700px) {
+  .sp-root { flex-direction: column; flex-wrap: nowrap; }
+  .sp-panel { flex: 0 0 auto; }
+  .sp-photos { flex: 1 1 auto; min-height: 220px; }
+
+  .sp-content { gap: clamp(12px, 2.2vw, 32px); padding: 16px 20px; }
+
+  .sp-eyebrow  { font-size: 10.3px; }
+  .sp-title    { font-size: clamp(30.5px, 4vw, 52px); }
+  .sp-lede     { font-size: clamp(14px, 1vw, 16px); }
+  .sp-cta      { font-size: 13px; padding: 18px 34px; min-height: 52px; }
+  .sp-reassure { font-size: 11.5px; }
+  .sp-trust    { font-size: 10.5px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sp-kb { animation: none; }
   .sp-stack-img, .sp-root, .sp-cta { transition: none; }
