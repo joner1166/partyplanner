@@ -35,6 +35,7 @@ const MENU = {
     { name: 'Steak Fajitas', img: '/images/steak/stk fajitas.webp', desc: 'Marinated beef stir-fried with green, yellow and red peppers, onions, cilantro and spices.' },
     { name: 'Chile Colorado', img: '/images/steak/chilecolorado.webp', desc: 'Steak in small chunks, sautéed in red sauce made with chile de árbol, Guajillo and fresh tomato.' },
     { name: 'Carne Asada Tacos', img: '/images/steak/tacosasada.webp', desc: 'Broiled and diced steak cooked with pico de gallo and served with avocado sauce.' },
+    { name: 'Carne Asada', img: '/images/steak/carneasada.webp', desc: 'Thin New York steak broiled with lemon juice, and spices. Topped with sautéed tomatoes, onions, a little cilantro and jalapeño.' },
   ],
   pork: [
     { name: 'Carnitas', img: '/images/pork/carnitas.webp', desc: 'Lean pork marinated with fresh oranges and spices, slowly cooked in its own juices until tender.' },
