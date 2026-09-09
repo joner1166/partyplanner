@@ -462,6 +462,53 @@
 .pl-root textarea:focus-visible,
 .pl-root a:focus-visible { outline: 3px solid #1B3D6F; outline-offset: 2px; }
 
+/* ── Teléfono: todo más chico y compacto — menos scroll, más denso ── */
+@media (max-width: 700px) {
+  .pl-main { padding: 16px 14px 60px; }
+  .pl-section { margin-top: 24px; }
+  .pl-step-no { font-size: 10px; }
+  .pl-h2 { font-size: clamp(21px, 6vw, 28px); }
+  .pl-card { padding: 14px; }
+  .pl-note { font-size: 11.5px; }
+
+  .pl-progress { gap: 6px 10px; padding-bottom: 16px; }
+  .pl-dot { width: 24px; height: 24px; font-size: 11px; }
+  .pl-step-label { font-size: 10px; }
+
+  .pl-service-grid { gap: 10px; margin-top: 14px; }
+  .pl-service { padding: 16px 16px 14px; min-height: auto; gap: 6px; }
+  .pl-service-icon { font-size: 26px; }
+  .pl-service-title { font-size: 17px; }
+  .pl-service-desc { font-size: 12px; }
+  .pl-service-note { font-size: 9.5px; }
+
+  .pl-two-col { gap: 14px; margin-top: 14px; }
+  .pl-count { font-size: 34px; }
+  .pl-step-btn { width: 44px; height: 44px; font-size: 20px; }
+  .pl-chip { min-height: 38px; padding: 0 13px; font-size: 12.5px; }
+
+  .pl-tab { min-height: 38px; padding: 0 13px; font-size: 12.5px; gap: 6px; }
+  .pl-tab span { font-size: 14px; }
+
+  .pl-dish-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+  .pl-dish-img-wrap { aspect-ratio: 1 / 1; }
+  .pl-dish-body { padding: 9px 10px 11px; gap: 3px; }
+  .pl-dish-name { font-size: 13px; line-height: 1.2; }
+  .pl-dish-desc {
+    font-size: 10.5px; line-height: 1.35;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .pl-dish-check { width: 22px; height: 22px; font-size: 12px; top: 6px; right: 6px; }
+
+  .pl-cal-day { min-height: 32px; font-size: 12px; }
+  .pl-cal-month { font-size: 12px; }
+
+  .pl-summary { padding: 14px 16px; gap: 12px; }
+  .pl-summary-facts { font-size: 12px; gap: 6px 14px; }
+  .pl-cta, .pl-send { font-size: 12px; padding: 14px 22px; min-height: 48px; }
+  .pl-send-wide { padding: 15px; min-height: 48px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pl-service, .pl-dish, .pl-cta, .pl-send, .pl-gauge-fill { transition: none; }
   .pl-service:hover, .pl-dish:hover, .pl-cta:hover, .pl-send:hover { transform: none; }

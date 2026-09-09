@@ -105,6 +105,7 @@ export function PlannerPage({ onHome }) {
   const [sent, setSent]         = useState(false)
   const [sending, setSending]   = useState(false)
   const [modal, setModal]       = useState(null)
+  const [showContact, setShowContact] = useState(false)
   const contactRef = useRef(null)
 
   const max     = dishLimit(guests)
@@ -238,13 +239,17 @@ export function PlannerPage({ onHome }) {
     setCat('chicken'); setPicks([]); setTrimmed(0)
     setForm({ fname: '', lname: '', phone: '', email: '', comments: '' })
     setPrivacy(false); setTerms(false); setTried(false); setSent(false); setModal(null)
+    setShowContact(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
     onHome?.()
   }
 
   const goContact = () => {
-    const el = contactRef.current
-    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' })
+    setShowContact(true)
+    requestAnimationFrame(() => {
+      const el = contactRef.current
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' })
+    })
   }
 
   const shiftMonth = d => setView(v => { const n = new Date(v); n.setMonth(n.getMonth() + d); return n })
@@ -307,6 +312,7 @@ export function PlannerPage({ onHome }) {
         </section>
 
         {/* ── Paso 2 ── */}
+        {service && (
         <section className="pl-section">
           <div className="pl-step-no">Step 02</div>
           <h2 className="pl-h2">Guests, date and time</h2>
@@ -409,8 +415,10 @@ export function PlannerPage({ onHome }) {
             </div>
           </div>
         </section>
+        )}
 
         {/* ── Paso 3 ── */}
+        {step2Ok && (
         <section className="pl-section">
           <div className="pl-step-no">Step 03</div>
           <div className="pl-h2-row">
@@ -472,8 +480,10 @@ export function PlannerPage({ onHome }) {
             </div>
           )}
         </section>
+        )}
 
         {/* ── Resumen + continuar ── */}
+        {step2Ok && (
         <div className="pl-summary">
           <div className="pl-summary-facts">
             <div><span>Service</span>{service ? SERVICES.find(s => s.id === service).title : '—'}</div>
@@ -486,9 +496,10 @@ export function PlannerPage({ onHome }) {
             Continue to contact <span aria-hidden="true">→</span>
           </button>
         </div>
+        )}
 
         {/* ── Paso 4 ── */}
-        {!sent && (
+        {showContact && !sent && (
           <section className="pl-section" ref={contactRef}>
             <div className="pl-step-no">Step 04</div>
             <h2 className="pl-h2">Who should we call?</h2>
