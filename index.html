@@ -17,9 +17,11 @@
       Netlify scans this file at build time to register the form endpoint.
       After deploying, go to: Site Settings → Forms → Notifications
       and add desertinn@lindomichoacan.com as the email recipient.
+      The form name must stay "event-booking" (here and in src/planner.jsx): the email
+      notification is attached to that name, and renaming it disconnects the notification.
     -->
-    <form name="party-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="party-booking" />
+    <form name="event-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="event-booking" />
       <input name="bot-field" />
       <input name="first-name" />
       <input name="last-name" />

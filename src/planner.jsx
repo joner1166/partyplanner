@@ -219,7 +219,7 @@ export function PlannerPage({ onHome }) {
     if (!canSend) { setTried(true); return }
     setSending(true)
     const body = new URLSearchParams({
-      'form-name': 'party-booking',
+      'form-name': 'event-booking',
       'bot-field': '',                       // honeypot que index.html declara
       'first-name': form.fname.trim(),
       'last-name': form.lname.trim(),
