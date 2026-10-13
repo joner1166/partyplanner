@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import './planner.css'
 
 /* ── Datos ── */
@@ -89,6 +89,14 @@ function quote({ service, guests, date, period }) {
 const money = n => '$' + n.toLocaleString('en-US')
 const dishLimit = guests => (guests <= 50 ? 3 : 4)
 
+/* Desplazamiento suave hacia una sección; instantáneo si el usuario pidió menos movimiento */
+const scrollToRef = (ref, delay = 250) => setTimeout(() => {
+  const el = ref.current
+  if (!el) return
+  const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: reduce ? 'auto' : 'smooth' })
+}, delay)
+
 export function PlannerPage({ onHome }) {
   const [service, setService]   = useState(null)
   const [guests, setGuests]     = useState(40)
@@ -107,13 +115,23 @@ export function PlannerPage({ onHome }) {
   const [sending, setSending]   = useState(false)
   const [modal, setModal]       = useState(null)
   const [showContact, setShowContact] = useState(false)
+  const step2Ref   = useRef(null)
+  const step3Ref   = useRef(null)
+  const summaryRef = useRef(null)
   const contactRef = useRef(null)
+  const confirmRef = useRef(null)
 
   const max     = dishLimit(guests)
   const atMax   = picks.length >= max
   const dineIn  = service === 'dinein'
   const step2Ok = !!(service && guests && date && time)
   const q       = quote({ service, guests, date, period })
+  const hasService = !!service
+
+  /* Al completar cada etapa, llevar al usuario a la siguiente (solo cuando se cumple por primera vez) */
+  useEffect(() => { if (hasService) scrollToRef(step2Ref) }, [hasService])
+  useEffect(() => { if (step2Ok) scrollToRef(step3Ref) }, [step2Ok])
+  useEffect(() => { if (sent) scrollToRef(confirmRef, 50) }, [sent])
 
   /* Cambiar invitados recorta el menú al límite que corresponde */
   const applyGuests = n => {
@@ -126,6 +144,8 @@ export function PlannerPage({ onHome }) {
 
   const toggleDish = dish => {
     setTrimmed(0)
+    /* Menú completo → mostrar "Continue to contact" */
+    if (!picks.some(x => x.name === dish.name) && picks.length + 1 === max) scrollToRef(summaryRef, 400)
     setPicks(p => {
       if (p.some(x => x.name === dish.name)) return p.filter(x => x.name !== dish.name)
       if (p.length >= max) return p
@@ -247,10 +267,7 @@ export function PlannerPage({ onHome }) {
 
   const goContact = () => {
     setShowContact(true)
-    requestAnimationFrame(() => {
-      const el = contactRef.current
-      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' })
-    })
+    scrollToRef(contactRef, 0)
   }
 
   const shiftMonth = d => setView(v => { const n = new Date(v); n.setMonth(n.getMonth() + d); return n })
@@ -314,7 +331,7 @@ export function PlannerPage({ onHome }) {
 
         {/* ── Paso 2 ── */}
         {service && (
-        <section className="pl-section">
+        <section className="pl-section" ref={step2Ref}>
           <div className="pl-step-no">Step 02</div>
           <h2 className="pl-h2">Guests, date and time</h2>
 
@@ -420,7 +437,7 @@ export function PlannerPage({ onHome }) {
 
         {/* ── Paso 3 ── */}
         {step2Ok && (
-        <section className="pl-section">
+        <section className="pl-section" ref={step3Ref}>
           <div className="pl-step-no">Step 03</div>
           <div className="pl-h2-row">
             <h2 className="pl-h2">Pick your dishes</h2>
@@ -485,7 +502,7 @@ export function PlannerPage({ onHome }) {
 
         {/* ── Resumen + continuar ── */}
         {step2Ok && (
-        <div className="pl-summary">
+        <div className="pl-summary" ref={summaryRef}>
           <div className="pl-summary-facts">
             <div><span>Service</span>{service ? SERVICES.find(s => s.id === service).title : '—'}</div>
             <div><span>Guests</span>{guests}</div>
@@ -570,7 +587,7 @@ export function PlannerPage({ onHome }) {
 
         {/* ── Confirmación ── */}
         {sent && (
-          <section className="pl-confirm">
+          <section className="pl-confirm" ref={confirmRef}>
             <div className="pl-confirm-head">
               <div className="pl-confirm-emoji" aria-hidden="true">🎉</div>
               <h2 className="pl-confirm-title">Thank You!</h2>

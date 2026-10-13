@@ -79,6 +79,12 @@
 
 /* ── Secciones ── */
 .pl-section { margin-top: clamp(30px, 4vw, 56px); }
+/* Entrada suave de cada etapa al aparecer */
+.pl-section, .pl-summary, .pl-confirm { animation: pl-rise 0.35s ease-out both; }
+@keyframes pl-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
 .pl-step-no {
   font-size: 11.5px; font-weight: 600; letter-spacing: 0.22em;
   text-transform: uppercase; color: #8a5e08;
@@ -524,5 +530,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .pl-service, .pl-dish, .pl-cta, .pl-send, .pl-gauge-fill { transition: none; }
+  .pl-section, .pl-summary, .pl-confirm { animation: none; }
   .pl-service:hover, .pl-dish:hover, .pl-cta:hover, .pl-send:hover { transform: none; }
 }
